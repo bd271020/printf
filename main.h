@@ -15,7 +15,7 @@ typedef struct convert
 {
 	char *spec;
 	int (*f)(va_list);
-}
+}convert_spec;
 
 int _printf(const char *format, ...);
 int make(const char *format, convert_spec func_list[], va_list arg_list);
