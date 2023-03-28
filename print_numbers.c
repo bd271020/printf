@@ -1,40 +1,45 @@
 #include "main.h"
 
 /**
- * print_i - prints an integer
- * @i: integer to print
- *
- * Return: number of chars and digits printed
+ * print_int - Print int
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width.
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Number of chars printed
  */
-int print_i(va_list i)
+int print_int(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
 {
-	int a[10];
+	int i = BUFF_SIZE - 2;
+	int is_negative = 0;
+	long int n = va_arg(types, long int);
+	unsigned long int num;
 
-	n = va_arg(i, int);
-	count = 0;
-	m = 1000000000;
-	a[0] = n / m;
-	for (j = 1; j < 10; j++)
-	{
-		m /= 10;
-		a[j] = (n / m) % 10;
-	}
+	n = convert_size_number(n, size);
+
+	if (n == 0)
+		buffer[i--] = '0';
+
+	buffer[BUFF_SIZE - 1] = '\0';
+	num = (unsigned long int)n;
+
 	if (n < 0)
 	{
-		_putchar('-');
-		count++;
-		for (j = 0; j < 10; j++)
-			a[j] *= -1;
+		num = (unsigned long int)((-1) * n);
+		is_negative = 1;
 	}
-	for (j = 0, sum = 0; j < 10; j++)
+
+	while (num > 0)
 	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
-		{
-			_putchar('0' + a[j]);
-			count++;
-		}
+		buffer[i--] = (num % 10) + '0';
+		num /= 10;
 	}
-	return (count);
+
+	i++;
+
+	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
