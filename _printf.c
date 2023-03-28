@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 
 	va_start(arg_list, format);
 
-	output_chars = make(format, funct_list, arg_list);
+	output_chars = make(format, func_list, arg_list);
 	va_end(arg_list);
 	return (output_chars);
 }
