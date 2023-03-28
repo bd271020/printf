@@ -32,7 +32,7 @@ int make(const char *format, convert_spec func_list[], va_list arg_list)
 			}
 			if (func_list[j].spec == NULL && format[i + 1] != ' ')
 			{
-				if (format[i + 1] == '\0')
+				if (format[i + 1] != '\0')
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
