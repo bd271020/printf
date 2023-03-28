@@ -39,3 +39,13 @@ int print_percent(__attribute__((unused))va_list args)
 	_putchar('%');
 	return (1);
 }
+
+/**
+ * print_integer - Prints integer
+ * @args: list of argumments
+ * Return: returns the integer inputted
+ */
+int print_integer(__attribute__((unused))va_list args)
+{
+	return (0);
+}
