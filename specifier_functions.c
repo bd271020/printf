@@ -45,7 +45,10 @@ int print_percent(__attribute__((unused))va_list args)
  * @args: list of argumments
  * Return: returns the integer inputted
  */
-int print_integer(__attribute__((unused))va_list args)
+int print_integer(va_list args)
 {
-	return (0);
+	int num;
+
+	num = print_number(args);
+	return (num);
 }
