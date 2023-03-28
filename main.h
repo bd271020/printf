@@ -6,15 +6,15 @@
 #include <stdlib.h>
 
 /**
- * struct convert - defines a strucyure for symbols and functions
+ * struct convert - defines a structure for specifiers and functions
  *
- *  @sym: The operator
+ *  @spec: The conversion operator
  *  @f: The function associated
  */
 typedef struct convert
 {
 	char *spec;
-	int (*f) (va_list);
+	int (*f)(va_list);
 }
 
 int _printf(const char *format, ...);
