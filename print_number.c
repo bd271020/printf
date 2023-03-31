@@ -22,7 +22,7 @@ int print_number(va_list arg)
 	}
 	else
 		x = n;
-	while ((x / d) > 10)
+	while ((x / d) > 9)
 		d = d * 10;
 	while (d != 0)
 	{
@@ -49,7 +49,7 @@ int print_unsgined_number(unsigned int n)
 
 	x = n;
 
-	while ((x / d) > 10)
+	while ((x / d) > 9)
 		d = d * 10;
 	while (d != 0)
 	{
