@@ -17,7 +17,7 @@ int print_number(va_list arg)
 
 	if (n < 0)
 	{
-		i = _putchar('-');
+		i = i + _putchar('-');
 		x = n * (-1);
 	}
 	else
